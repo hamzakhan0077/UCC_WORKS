@@ -2,7 +2,7 @@ Author Hamza Hassan Khan
 Uccworks 2021 project work version 1.1 (beta)
 
 It is mainly a research on Impact of Covid-19 
-This webpage is coded using Python's Flask Framework
+This webpage is coded using Python's Flask Framework, templates are coded using html jinja2
 
 
 
