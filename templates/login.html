@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% endblock content %}
+
+
+
+{% block forms %}
+
+    <form method = "POST" action = "">
+        {{ form.hidden_tag() }}
+
+       {{ form.email.label}}  <!-- Form Label -->
+        {% if form.email.errors %}
+            {{ form.email}}
+        <p id ='error' >
+            {% for error in form.email.errors %}
+            <span> {{error}}</span>
+
+            {% endfor%}
+        </p>
+        {% else %}
+               {{ form.email}}    <!-- Form field -->
+        {% endif %}
+
+
+
+        {{ form.password.label}}  <!-- Form Label -->
+        {% if form.password.errors %}
+            {{ form.password}}
+        <p id ='error' >
+            {% for error in form.password.errors %}
+            <span> {{error}}</span>
+
+            {% endfor%}
+        </p>
+        {% else %}
+               {{ form.password}}    <!-- Form field -->
+        {% endif %}
+
+
+
+
+        {{ form.submit }}
+         <small><a href = " {{url_for('reset_request')}}" >Forgot Password ? </a></small>
+
+
+
+
+     <small><a href = "{{ url_for('register') }}" >Need an account, Sign up </a></small>
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+{% endblock forms %}

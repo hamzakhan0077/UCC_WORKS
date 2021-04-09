@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+{% endblock content %}
+
+
+{% block text %}
+
+           <article><h1><a  id = 'username' href = "{{url_for('user_posts',username=post.author.username)}}">{{post.author.username}}</a></h1>
+            <h2>Title: {{post.title}}<small> {{post.date_posted.strftime('%Y-%m-%d')}}</small></h2>
+            <p>{{post.content}}</p>
+            {% if post.author == current_user %}
+                <a href="{{url_for('update_post',post_id=post.id)}} "> Update </a>
+                <a id = "delete" href="{{url_for('delete_post',post_id=post.id)}} "> Delete </a>
+            {% endif %}
+
+
+        </article>
+
+{% endblock text%}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+{% endblock content %}
+
+
+{% block addToNav%}
+
+    <li><a href = "login">Login</a></li>
+    <li><a href = "register">Register</a></li>
+
+{% endblock addToNav %}
+
+
+{% block text %}
+
+
+
+    <p>
+        I Hamza Hassan Khan am a second year Computer Science at University College Cork
+        I am more than delighted to participate in <a id= 'uccWorksLink' href = "https://www.ucc.ie/en/careers/areyouacurrentstudent/getexperience/uccworks/">UCC Works</a>
+        In this report, I am presenting my research on how Covid-19 shaped the education system, what are the areas of growth and my personal opinion as
+        a student.
+    </p>
+    <figure>
+        <img src = "{{ url_for('static', filename='images/covid.png')}}" title="The Coronavirus 2019" alt = "Picture of Covid-19 , a Sphere with red spikes on it "/>
+        <figcaption>
+            Covid-19
+        </figcaption>
+    </figure>
+
+    <p>
+        To begin with, What is <b>Coivd-19</b> ?, Well in short Coronavirus <i>aka Covid-19</i> is a contagious virus that started to spread its roots all over the world in December 2019.
+        The situation became adverse to such an extent that it was declared as a pandemic in March 2020,
+        Which is active up to date. It completely shaped the integrated form of the Human Life. It alternated the entire education system and some occupations.
+
+    </p>
+
+
+{% endblock text %}

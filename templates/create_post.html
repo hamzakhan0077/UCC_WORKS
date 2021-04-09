@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+{% endblock content %}
+
+
+
+
+{% block forms %}
+
+    <form method = "POST" action = "">
+        {{ form.hidden_tag() }}
+        <legend> {{legend}}</legend>
+       {{ form.title.label}}  <!-- Form Label -->
+        {% if form.title.errors %}
+            {{ form.title}}
+        <p id ='error' >
+            {% for error in form.title.errors %}
+            <span> {{error}}</span>
+
+            {% endfor%}
+        </p>
+        {% else %}
+               {{ form.title}}    <!-- Form field -->
+        {% endif %}
+        {{ form.content.label}}  <!-- Form Labelu -->
+        {% if form.content.errors %}
+            {{ form.content}}
+        <p id ='error' >
+            {% for error in form.content.errors %}
+            <span> {{error}}</span>
+
+            {% endfor%}
+        </p>
+        {% else %}
+               {{ form.content}}    <!-- Form field -->
+        {% endif %}
+        {{ form.submit }}
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock forms %}

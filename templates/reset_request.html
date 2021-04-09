@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% endblock content %}
+
+
+
+{% block forms %}
+
+    <form method = "POST" action = "">
+        {{ form.hidden_tag() }}
+
+       {{ form.email.label}}  <!-- Form Label -->
+        {% if form.email.errors %}
+            {{ form.email}}
+        <p id ='error' >
+            {% for error in form.email.errors %}
+            <span> {{error}}</span>
+
+            {% endfor%}
+        </p>
+        {% else %}
+               {{ form.email}}    <!-- Form field -->
+        {% endif %}
+
+        {{ form.submit }}
+
+    </form>
+
+{% endblock forms %}

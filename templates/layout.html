@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+    <html lang = "en">
+    <head>
+        <meta charset = "utf-8"/>
+        <title>UCC Works 2021</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+
+
+        <link rel="icon" href="{{ url_for('static', filename='icons/h.ico') }}" type="image" sizes="16x16">
+        {% block scripts %} {% endblock %}
+
+
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	<!---<link rel='icon' href='images/p.ico'/> --->
+    </head>
+
+    <body>
+        {% block content%} {% endblock %}
+
+        <header id = "top">
+            <h1> UCC Works Project Report 2021</h1>
+            <p> By  Hamza Hassan Khan</p>
+            <small> Version 1.1 (Beta) </small>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href = "{{url_for('index')}}">Home</a></li>
+                <li><a href = "{{url_for('impact')}}">Impact  </a></li>
+                <li><a href = "{{url_for('growth')}}">Areas Of Growth</a></li>
+                <li><a href = "{{url_for('reviews')}}">Reviews</a></li>
+
+                {% if current_user.is_authenticated %}
+                    <li><a href = "{{url_for('new_post')}}"> Post a Review</a></li>
+                    <li><a href = "{{url_for('logout')}}">Logout</a></li>
+                {% else %}
+                    <li><a href = "{{url_for('login')}}">Login</a></li>
+                    <li><a href = "{{url_for('register')}}">Register</a></li>
+                {% endif %}
+
+
+
+            </ul>
+        </nav>
+
+
+        <main>
+            {% block forms %} {% endblock %}
+
+
+
+
+            <section>
+                {% with messages = get_flashed_messages(with_categories = true) %}
+                {% if messages %}
+                    {% for category,message in messages %}
+                        <p id = 'success'>{{message}}</p>
+
+
+                    {% endfor %}
+
+                 {% endif %}
+
+            {% endwith %}
+
+
+		        {% block text %} {% endblock %}
+
+
+            </section>
+
+            <p id="backToTop"><a href= '#top'>Back To Top</a></p>
+
+        </main>
+        <aside>
+	    <section>
+		<h2>About</h2>
+                 <p> I am more than happy to share source code of this webpage. For Security reasons I wont be providing direct link to it</p>
+                 <p> Those who are interested can leave a message on <a id = 'uccWorksLink' href= 'https://www.linkedin.com/in/hamza-hassan-khan-0ba9851aa/'>LinkedIn</a> and I will forward the My GitHub account Link to this webpage's source code.</p>
+            <p>You can also send me an email on: hamza stop khan amphora student plip ucc plop ie</p>
+
+
+
+	     </section>
+	</aside>
+        <footer>
+            <p><small>&copy; Hamza Hassan Khan 2021-23. All Rights reserved</small>
+            </p>
+        </footer>
+    </body>
+    </html>
