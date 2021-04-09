@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='scripts/game.js') }}" type="module"></script>
+
+{% endblock scripts %}
+
+
+
+{% block content %}
+{% endblock content %}
+
+{% block text %}
+<canvas width="800" height="1000"></canvas>
+{% endblock text %}
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8"/>
+        <title>UCC WORKS</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/game.css') }}" />
+        <script src="{{ url_for('static', filename='scripts/game.js') }}" type="module"></script>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </head>
+
+<body>
+    <canvas width="800" height="1000"></canvas>
+</body>
+
+</html>
